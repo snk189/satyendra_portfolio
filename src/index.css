@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 10 12 16;
+  --bg-raised: 16 19 26;
+  --bg-panel: 20 24 33;
+  --line: 35 39 51;
+  --line-soft: 26 29 38;
+  --line-bright: 51 57 74;
+  --ink: 231 234 240;
+  --ink-dim: 155 163 180;
+  --ink-faint: 92 100 120;
+  --grid-line: 255 255 255;
+  --grid-alpha: 0.035;
+}
+
+html.light {
+  --bg: 246 247 249;
+  --bg-raised: 255 255 255;
+  --bg-panel: 255 255 255;
+  --line: 222 226 233;
+  --line-soft: 232 235 240;
+  --line-bright: 196 202 213;
+  --ink: 16 19 26;
+  --ink-dim: 78 86 102;
+  --ink-faint: 138 145 160;
+  --grid-line: 10 12 16;
+  --grid-alpha: 0.045;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: #5AA9FF;
+  color: #0A0C10;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0C10;
+}
+::-webkit-scrollbar-thumb {
+  background: #232733;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #33394A;
+}
+
+:focus-visible {
+  outline: 2px solid #5AA9FF;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  background-image:
+    linear-gradient(to right, rgba(var(--grid-line) / var(--grid-alpha)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--grid-line) / var(--grid-alpha)) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-attachment: fixed;
+  transition: background-color 0.3s ease;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.corner-frame {
+  position: relative;
+}
+.corner-frame::before,
+.corner-frame::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: rgb(var(--line-bright));
+  transition: border-color 0.25s ease;
+}
+.corner-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+.corner-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+.corner-frame:hover::before,
+.corner-frame:hover::after {
+  border-color: #5AA9FF;
+}
+
+.mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

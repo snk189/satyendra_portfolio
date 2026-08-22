@@ -1,0 +1,67 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { systemLayers } from "../data/achievements";
+import { cn } from "../utils/cn";
+
+const descriptions: Record<string, string> = {
+  "Computer Systems": "How hardware, operating systems, and software actually fit together.",
+  Software: "Programs, logic, and architecture that turn ideas into behavior.",
+  Backend: "Services, APIs, and data flow that power an application.",
+  "Data / AI": "Models and pipelines that learn from and act on data.",
+  Infrastructure: "The deployment layer — containers, orchestration, delivery.",
+  Security: "Where all of the above can fail, and how to make it harder to.",
+};
+
+export function SystemLayersDiagram() {
+  const [active, setActive] = useState<string>(systemLayers[0]);
+  const activeIndex = systemLayers.indexOf(active);
+
+  return (
+    <div className="flex flex-col sm:flex-row gap-8 sm:gap-4">
+      <div className="flex flex-row sm:flex-col gap-0 overflow-x-auto sm:overflow-visible">
+        {systemLayers.map((layer, i) => (
+          <div key={layer} className="flex sm:flex-col items-center">
+            <button
+              onClick={() => setActive(layer)}
+              onMouseEnter={() => setActive(layer)}
+              className={cn(
+                "shrink-0 mono-label text-[11px] sm:text-xs px-3 py-2 rounded-sm border transition-all text-left whitespace-nowrap",
+                active === layer
+                  ? "border-signal text-signal bg-signal/5"
+                  : "border-line text-ink-faint hover:text-ink-dim hover:border-line-bright"
+              )}
+            >
+              {layer}
+            </button>
+            {i < systemLayers.length - 1 && (
+              <div className="flex items-center justify-center shrink-0 w-6 sm:w-auto sm:h-5">
+                <motion.div
+                  className="h-px w-6 sm:h-5 sm:w-px bg-line-bright origin-left sm:origin-top"
+                  animate={{
+                    backgroundColor: i < activeIndex ? "#5AA9FF" : "rgb(51 57 74)",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="corner-frame flex-1 rounded-sm border border-line bg-bg-panel/60 p-6 min-h-[120px]">
+        <motion.div
+          key={active}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <p className="mono-label text-[11px] text-amber mb-2">
+            {String(activeIndex + 1).padStart(2, "0")} / {String(systemLayers.length).padStart(2, "0")}
+          </p>
+          <h4 className="font-display text-xl text-ink mb-2">{active}</h4>
+          <p className="text-ink-dim text-sm leading-relaxed">{descriptions[active]}</p>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
