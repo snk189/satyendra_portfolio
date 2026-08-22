@@ -44,7 +44,7 @@ export const projects: Project[] = [
       "Built a GPU-accelerated dual-model LightGBM forecasting system for 12 menu items using 20+ temporal, behavioral, weather, and event-driven features.",
       "Automated ingredient procurement planning and built live dashboards for operational analytics.",
     ],
-    github: "#",
+    github: "https://github.com/snk189/bitespeed_co",
     architecture: [
       { label: "React / Android", detail: "Capacitor client" },
       { label: "Node / Express", detail: "API layer" },
@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "Admin and participant access secured with JWT authentication and bcrypt password hashing.",
       "Deployed via Docker and a GitOps CI/CD pipeline: GitHub Actions, GHCR, Kubernetes, and ArgoCD.",
     ],
-    github: "#",
+    github: "https://github.com/snk189/cc_sip",
     featured: true,
     architecture: [
       { label: "Participants" },
@@ -116,7 +116,7 @@ export const projects: Project[] = [
       "Achieved 80% average OCR confidence under varied image conditions.",
       "Built asynchronous FastAPI services for violation logging, vehicle history retrieval, automated fine accumulation, and payment tracking.",
     ],
-    github: "#",
+    github: "https://github.com/snk189/noparking_pro",
     architecture: [
       { label: "Camera", detail: "ESP32-CAM" },
       { label: "Image Processing", detail: "OpenCV" },
