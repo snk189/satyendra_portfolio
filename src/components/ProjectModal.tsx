@@ -33,7 +33,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     <AnimatePresence>
       {project && (
         <motion.div
-          className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto p-4 sm:p-6 md:p-10"
+          className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto p-3 sm:p-6 md:p-10 max-w-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -53,17 +53,17 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.98 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-3xl rounded-sm border border-line bg-bg-panel my-8"
+            className="relative w-full max-w-3xl rounded-sm border border-line bg-bg-panel my-4 sm:my-8 overflow-hidden min-w-0"
           >
-            <div className="flex items-start justify-between gap-4 border-b border-line px-6 sm:px-8 py-6">
-              <div>
+            <div className="flex items-start justify-between gap-3 border-b border-line px-4 sm:px-8 py-5 sm:py-6">
+              <div className="min-w-0 flex-1">
                 {project.context && (
                   <p className="mono-label text-[10px] text-amber mb-2">{project.context}</p>
                 )}
-                <h3 id="project-modal-title" className="font-display text-2xl sm:text-3xl text-ink">
+                <h3 id="project-modal-title" className="font-display text-xl sm:text-3xl text-ink break-words">
                   {project.name}
                 </h3>
-                <p className="text-ink-dim text-sm mt-2">{project.tagline}</p>
+                <p className="text-ink-dim text-xs sm:text-sm mt-1 sm:mt-2 leading-relaxed">{project.tagline}</p>
               </div>
               <button
                 ref={closeRef}
@@ -75,7 +75,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               </button>
             </div>
 
-            <div className="px-6 sm:px-8 py-6 space-y-8">
+            <div className="px-4 sm:px-8 py-5 sm:py-6 space-y-6 sm:space-y-8 min-w-0 max-w-full">
               <p className="text-ink-dim leading-relaxed">{project.description}</p>
 
               <div>

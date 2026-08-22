@@ -14,10 +14,10 @@ export function TechStack() {
           />
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-full min-w-0">
           {stack.map((cat, i) => (
-            <ScrollReveal key={cat.category} delay={(i % 3) * 0.05}>
-              <div className="corner-frame h-full rounded-sm border border-line bg-bg-panel/50 p-5">
+            <ScrollReveal key={cat.category} delay={(i % 3) * 0.05} className="min-w-0 w-full">
+              <div className="corner-frame h-full rounded-sm border border-line bg-bg-panel/50 p-4 sm:p-5 w-full min-w-0">
                 <p className="mono-label text-[11px] text-signal mb-3">{cat.category}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {cat.items.map((item) => (

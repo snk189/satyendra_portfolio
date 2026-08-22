@@ -20,12 +20,12 @@ export function Projects() {
           />
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-2 gap-5 w-full max-w-full min-w-0">
           {projects.map((project, i) => (
             <ScrollReveal
               key={project.id}
               delay={i * 0.06}
-              className={project.featured ? "md:col-span-2" : ""}
+              className={`min-w-0 w-full ${project.featured ? "md:col-span-2" : ""}`}
             >
               <ProjectCard project={project} onOpen={() => setActive(project)} />
             </ScrollReveal>

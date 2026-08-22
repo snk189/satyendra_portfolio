@@ -12,16 +12,16 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
   return (
     <div
       className={cn(
-        "corner-frame group relative flex flex-col rounded-sm border border-line bg-bg-panel/60 p-6 sm:p-7 transition-colors hover:bg-bg-panel",
+        "corner-frame group relative flex flex-col rounded-sm border border-line bg-bg-panel/60 p-5 sm:p-7 transition-colors hover:bg-bg-panel w-full min-w-0 max-w-full",
         project.featured && "md:col-span-2"
       )}
     >
-      <div className="flex items-start justify-between gap-4 mb-3">
-        <div>
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div className="min-w-0 flex-1">
           {project.context && (
             <p className="mono-label text-[10px] text-amber mb-2">{project.context}</p>
           )}
-          <h3 className="font-display text-xl sm:text-2xl text-ink">{project.name}</h3>
+          <h3 className="font-display text-lg sm:text-2xl text-ink break-words">{project.name}</h3>
         </div>
         <a
           href={project.github}

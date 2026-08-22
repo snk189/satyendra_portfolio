@@ -37,12 +37,12 @@ export function Interests() {
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line rounded-sm overflow-hidden border border-line">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line rounded-sm overflow-hidden border border-line w-full max-w-full min-w-0">
           {interests.map((interest, i) => {
             const Icon = iconMap[interest.icon];
             return (
-              <ScrollReveal key={interest.title} delay={(i % 4) * 0.05}>
-                <div className="group relative h-full bg-bg-panel p-6 transition-colors hover:bg-bg-raised">
+              <ScrollReveal key={interest.title} delay={(i % 4) * 0.05} className="min-w-0 w-full">
+                <div className="group relative h-full bg-bg-panel p-5 sm:p-6 transition-colors hover:bg-bg-raised w-full min-w-0">
                   <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-sm border border-line text-signal group-hover:border-signal/50 group-hover:bg-signal/5 transition-colors">
                     <Icon size={18} strokeWidth={1.6} />
                   </div>

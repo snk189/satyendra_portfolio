@@ -11,10 +11,10 @@ export function Achievements() {
           <SectionHeading index="06" eyebrow="Achievements" title="A few numbers" />
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 gap-4 mb-20">
+        <div className="grid sm:grid-cols-2 gap-4 mb-20 w-full max-w-full min-w-0">
           {achievements.map((a, i) => (
-            <ScrollReveal key={a.title} delay={i * 0.06}>
-              <div className="corner-frame h-full rounded-sm border border-line bg-bg-panel/50 p-6 flex items-start gap-4">
+            <ScrollReveal key={a.title} delay={i * 0.06} className="min-w-0 w-full">
+              <div className="corner-frame h-full rounded-sm border border-line bg-bg-panel/50 p-5 sm:p-6 flex items-start gap-4 w-full min-w-0">
                 <div className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-sm border border-line text-amber">
                   <Trophy size={17} strokeWidth={1.6} />
                 </div>

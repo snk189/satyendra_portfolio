@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100svh] flex items-center overflow-hidden border-b border-line"
+      className="relative min-h-[100svh] flex items-center overflow-hidden border-b border-line w-full max-w-full"
     >
       <NodeBackground />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg" />
@@ -25,13 +25,13 @@ export function Hero() {
           initial={reduced ? undefined : { opacity: 0, y: 14 }}
           animate={reduced ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 rounded-sm border border-line bg-bg-raised/70 backdrop-blur px-3 py-1.5 mb-8"
+          className="inline-flex items-center gap-2 rounded-sm border border-line bg-bg-raised/70 backdrop-blur px-3 py-1.5 mb-8 max-w-full"
         >
-          <span className="relative flex h-1.5 w-1.5">
+          <span className="relative flex h-1.5 w-1.5 shrink-0">
             <span className="absolute inline-flex h-full w-full rounded-full bg-amber opacity-75 animate-ping" />
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber" />
           </span>
-          <span className="mono-label text-[11px] text-ink-dim">Currently building &amp; exploring</span>
+          <span className="mono-label text-[10px] sm:text-[11px] text-ink-dim truncate">Currently building &amp; exploring</span>
         </motion.div>
 
         <motion.p
@@ -47,7 +47,7 @@ export function Hero() {
           initial={reduced ? undefined : { opacity: 0, y: 16 }}
           animate={reduced ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] text-ink text-balance max-w-4xl"
+          className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] sm:leading-[1.05] text-ink text-balance max-w-4xl break-words"
         >
           Engineering systems.
           <br />
@@ -73,7 +73,7 @@ export function Hero() {
           initial={reduced ? undefined : { opacity: 0, y: 16 }}
           animate={reduced ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex flex-wrap items-center gap-3"
+          className="mt-10 flex flex-wrap items-center gap-3 w-full"
         >
           <button
             onClick={scrollToProjects}

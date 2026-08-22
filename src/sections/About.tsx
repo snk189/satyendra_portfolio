@@ -10,8 +10,8 @@ export function About() {
           <SectionHeading index="01" eyebrow="About" title="About" />
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-          <ScrollReveal delay={0.05}>
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start w-full max-w-full min-w-0">
+          <ScrollReveal delay={0.05} className="min-w-0 w-full">
             <div className="space-y-5 text-ink-dim text-base md:text-lg leading-relaxed">
               <p>
                 I'm interested in computer systems as a whole — how software, backend
@@ -31,8 +31,8 @@ export function About() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.12}>
-            <div>
+          <ScrollReveal delay={0.12} className="min-w-0 w-full">
+            <div className="w-full min-w-0 max-w-full">
               <p className="mono-label text-[11px] text-ink-faint mb-4">Areas of interest — hover to explore</p>
               <SystemLayersDiagram />
             </div>

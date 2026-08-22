@@ -12,9 +12,9 @@ import { Contact } from "./sections/Contact";
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden">
       <Navbar />
-      <main>
+      <main className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <About />
         <Interests />
