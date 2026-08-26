@@ -17,15 +17,15 @@ export function SystemLayersDiagram() {
   const activeIndex = systemLayers.indexOf(active);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-6 sm:gap-4 w-full max-w-full min-w-0">
-      <div className="flex flex-row sm:flex-col gap-1 sm:gap-0 overflow-x-auto sm:overflow-visible w-full min-w-0 max-w-full pb-2 sm:pb-0 scrollbar-none py-1">
+    <div className="flex flex-col sm:flex-row gap-6 sm:gap-5 w-full max-w-full min-w-0 items-stretch">
+      <div className="flex flex-row sm:flex-col gap-1 sm:gap-0 overflow-x-auto sm:overflow-visible w-full sm:w-44 md:w-48 sm:shrink-0 pb-2 sm:pb-0 scrollbar-none py-1">
         {systemLayers.map((layer, i) => (
-          <div key={layer} className="flex sm:flex-col items-center shrink-0">
+          <div key={layer} className="flex sm:flex-col items-center sm:items-stretch shrink-0">
             <button
               onClick={() => setActive(layer)}
               onMouseEnter={() => setActive(layer)}
               className={cn(
-                "shrink-0 mono-label text-[10px] sm:text-xs px-2.5 py-2 sm:px-3 sm:py-2 rounded-sm border transition-all text-left whitespace-nowrap",
+                "shrink-0 mono-label text-[10px] sm:text-xs px-2.5 py-2 sm:px-3 sm:py-2 rounded-sm border transition-all text-left whitespace-nowrap w-full",
                 active === layer
                   ? "border-signal text-signal bg-signal/5"
                   : "border-line text-ink-faint hover:text-ink-dim hover:border-line-bright"
@@ -34,9 +34,9 @@ export function SystemLayersDiagram() {
               {layer}
             </button>
             {i < systemLayers.length - 1 && (
-              <div className="flex items-center justify-center shrink-0 w-4 sm:w-auto sm:h-5 px-1 sm:px-0">
+              <div className="flex items-center justify-center shrink-0 w-4 sm:w-full sm:h-4 px-1 sm:px-0">
                 <motion.div
-                  className="h-px w-4 sm:h-5 sm:w-px bg-line-bright origin-left sm:origin-top"
+                  className="h-px w-4 sm:h-4 sm:w-px bg-line-bright origin-left sm:origin-top"
                   animate={{
                     backgroundColor: i < activeIndex ? "#5AA9FF" : "rgb(51 57 74)",
                   }}
@@ -48,7 +48,7 @@ export function SystemLayersDiagram() {
         ))}
       </div>
 
-      <div className="corner-frame flex-1 rounded-sm border border-line bg-bg-panel/60 p-5 sm:p-6 min-h-[120px] min-w-0 max-w-full">
+      <div className="corner-frame flex-1 rounded-sm border border-line bg-bg-panel/60 p-5 sm:p-6 min-h-[140px] flex flex-col justify-center min-w-0 max-w-full">
         <motion.div
           key={active}
           initial={{ opacity: 0, y: 6 }}
