@@ -11,7 +11,6 @@ export const leadership: LeadershipEntry[] = [
     points: [
       "Event Lead for Human Neural Network",
       "Event Support team member across the showcase ",
-      "Volunteering across the showcase",
     ],
   },
   {
