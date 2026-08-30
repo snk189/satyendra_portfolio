@@ -9,8 +9,8 @@ export const leadership: LeadershipEntry[] = [
     org: "Coding Club RVCE",
     event: "Coding Club Showcase 2026",
     points: [
-      "Event Lead for Human Neural Network",
-      "Event Lead for one additional showcase event",
+      "Event Lead for Human Neural Network event",
+      "Event Support team for entire showcase ",
       "Volunteering across the showcase",
     ],
   },
