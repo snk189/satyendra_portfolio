@@ -14,7 +14,7 @@ export function About() {
           <ScrollReveal delay={0.05} className="min-w-0 w-full">
             <div className="space-y-5 text-ink-dim text-base md:text-lg leading-relaxed">
               <p>
-                I'm interested in computer systems as a whole — how software, backend
+                I'm interested in computer systems as a whole, how software, backend
                 infrastructure, AI/ML, databases, networking, and security all connect to make
                 something actually work.
               </p>
@@ -25,7 +25,7 @@ export function About() {
               </p>
               <p>
                 Outside of code, I enjoy turning broad ideas into concrete projects and technical
-                initiatives — whether that's a system I'm building on my own or an event I'm
+                initiatives, whether that's a system I'm building on my own or an event I'm
                 helping run.
               </p>
             </div>
@@ -33,7 +33,7 @@ export function About() {
 
           <ScrollReveal delay={0.12} className="min-w-0 w-full">
             <div className="w-full min-w-0 max-w-full">
-              <p className="mono-label text-[11px] text-ink-faint mb-4">Areas of interest — hover to explore</p>
+              <p className="mono-label text-[11px] text-ink-faint mb-4">Areas of interest, hover to explore</p>
               <SystemLayersDiagram />
             </div>
           </ScrollReveal>
