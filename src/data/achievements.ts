@@ -6,13 +6,13 @@ export interface Achievement {
 
 export const achievements: Achievement[] = [
   {
-    title: "JEE Main 2025",
-    result: "99.16 Percentile",
-  },
-  {
     title: "Hackemon 2.0 CTF",
     result: "10th Position",
     note: "Coding Club–organized CTF",
+  },
+  {
+    title: "JEE Main 2025",
+    result: "99.16 Percentile",
   },
 ];
 
