@@ -33,7 +33,7 @@ export function Interests() {
             index="02"
             eyebrow="What I build"
             title="Where I spend my time"
-            description="A working set of areas I keep coming back to — not a list of buzzwords, but the kinds of problems I actually enjoy solving."
+            description="A working set of areas I keep coming back to, not a list of buzzwords, but the kinds of problems I actually enjoy solving."
           />
         </ScrollReveal>
 
