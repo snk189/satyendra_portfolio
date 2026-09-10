@@ -16,7 +16,7 @@ export function Projects() {
             index="03"
             eyebrow="Projects"
             title="Things I've built"
-            description="Full systems, end to end — from data pipelines to deployment. Each one taught me something I couldn't have gotten from a tutorial."
+            description="Full systems, end to end, from data pipelines to deployment. Each one taught me something I couldn't have gotten from a tutorial."
           />
         </ScrollReveal>
 
